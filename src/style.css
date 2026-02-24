@@ -1,15 +1,203 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --color-cream: #F0EBE1;
+  --color-green: #2C4A3E;
+  --color-lightgreen: #50635b;
+  --color-rose: #efbeaf;
 }
+
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+}
+a {
+  text-decoration: none;
+  color: var(--color-green)
+  
+}
+a:hover{
+  font-weight: 600;
+}
+
+input {
+  cursor: pointer;
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-green);
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+}
+
+.navList {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  list-style: none;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse 80% 40% at center, var(--color-rose), var(--color-cream));
+}
+
+.hero h1{
+  font-size: 6rem;
+}
+
+#locationText {
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+
+#wildlifeCards {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem;
+  
+}
+
+#wildlifeCards div {
+  max-width: 300px;
+  overflow: hidden;
+  flex: 1;
+  
+  
+}
+
+#wildlifeCards img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 50px;
+
+}
+
+  .card {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s ease, transform 1s ease;
+  }
+
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#plantCards {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem;
+  
+}
+
+#plantCards div {
+  max-width: 300px;
+  overflow: hidden;
+  flex: 1;
+  
+  
+}
+
+#plantCards img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 50px;
+
+}
+
+
+.photographer {
+  color: var(--color-cream);
+}
+
+#currentMoodSection {
+  background: radial-gradient(ellipse 80% 40% at center, var(--color-green), var(--color-lightgreen));
+  color: var(--color-cream);
+  padding: 4rem;
+  display: flex;
+  justify-content: center; /* centrerar kortet */
+}
+
+/* Gör kortet till "två kolumner" */
+.currentMoodCard {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+
+}
+
+/* Textdelen */
+.mood-content {
+  flex: 1;
+  min-width: 0; /* viktigt för att text ska kunna brytas snyggt */
+}
+
+/* Bilddelen */
+.mood-image {
+  flex: 0 0 300px;  /* låser bredden */
+  max-width: 300px;
+  overflow: hidden;
+}
+
+#moodImg {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 50px;
+  display: block;
+}
+
+
+/* Mobil: stapla */
+@media (max-width: 768px) {
+  .currentMoodCard {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .mood-image {
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 

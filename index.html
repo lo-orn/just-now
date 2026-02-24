@@ -1,13 +1,96 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
     <title>just_now</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <header>
+        <div class="nav-div" id="navDiv">
+          <nav id="nav" class="nav">
+            <div class="logo">JUST NOW</div>
+            <ul class="navList">
+              <li id="about"><a href="#">About</a></li>
+              <li id="birds"><a href="#">Birds</a></li>
+              <li id="plants"><a href="#">Plants</a></li>
+              <li id="currentMood"><a href="#">Current Mood</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <!-- HERO -->
+        <section class="hero" id="hero">
+          <div id="titleDiv">
+            <h1 class="title" id="title">Just Now</h1>
+          </div>
+
+          <div class="location-div" id="locationDiv">
+            <span id="locationDisplay">
+              <span>📍</span>
+              <span id="locationText"></span>
+            </span>
+            <input
+              type="text"
+              id="locationInput"
+              class="hidden"
+              placeholder="Find a place.."
+            />
+          </div>
+
+          <h2 class="poetic-title" id="poeticTitle">
+            <!-- fylls i av Gemini API -->
+          </h2>
+
+          <p id="scrollDown">SCROLL TO EXPLORE</p>
+        </section>
+
+        <!-- BIRDS/WILDLIFE -->
+        <section id="wildlife">
+          <h2>Feathered Friends</h2>
+          <p>The birds present in your area right now.</p>
+          <div id="wildlifeCards">
+            <!-- kort fylls i av JS -->
+          </div>
+        </section>
+
+        <!-- PLANTS -->
+        <section id="plantSection">
+          <h2>Flora & Foliage</h2>
+          <p>
+            A curated collection of the botanical wonders found on today's path.
+          </p>
+          <div id="plantCards">
+            <!-- kort fylls i av JS -->
+          </div>
+        </section>
+
+        <!-- CURRENT MOOD-->
+        <section class="currentMoodSection" id="currentMoodSection">
+          <div class="currentMoodCard" id="currentMoodCard">
+            <div class="mood-content">
+              <h2 class="mood-label">CURRENT MOOD</h2>
+              <h3 id="moodTitle"></h3>
+              <p id="moodDescription"></p>
+            </div>
+
+            <div id="moodImageCard" class="mood-image">
+              <img id="moodImg" src="" alt="Current season" />
+              <a class="photographer" id="photographer" href=""></a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer><p>© 2026 Just Now. All rights reserved.</p></footer>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
