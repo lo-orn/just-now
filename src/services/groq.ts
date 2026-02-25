@@ -5,7 +5,9 @@ const API_KEY = import.meta.env.VITE_GROQ_API_KEY;
 
 export const fetchNatureInfo = async (city: string, date: string): Promise<NatureData> => {
   const prompt = `
-You are a nature expert guiding peolple year around. What is happening in nature in ${city} on ${date}?
+You are a nature expert. Based on the location ${city} and today's date ${date}, 
+what birds, plants and seasonal phenomena would a person realistically observe 
+outdoors RIGHT NOW? Be specific to this exact time of year and geographic region.
 
 Return ONLY a JSON object with this structure (no markdown, no backticks):
 {
