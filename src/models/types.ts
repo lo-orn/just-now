@@ -8,7 +8,7 @@ export type Bird = {
 export type Plant = {
     name: string,
     description: string,
-    imageUrl: string
+    imageUrl?: string
 }
 // export type Nature = {
 //     bird: Bird[],
@@ -24,5 +24,5 @@ export type NatureData = {
     plants: { name: string; description: string; season: string }[];
     moodTitle: string;
     description: string;
-    imageQuery: string;
+    imageQuery?: string;
   };
