@@ -5,16 +5,18 @@ const API_KEY = import.meta.env.VITE_GROQ_API_KEY;
 
 export const fetchNatureInfo = async (city: string, date: string): Promise<NatureData> => {
   const prompt = `
-You are a nature guide. What is happening in nature in ${city} on ${date}?
+You are a nature expert guiding peolple year around. What is happening in nature in ${city} on ${date}?
 
 Return ONLY a JSON object with this structure (no markdown, no backticks):
 {
-  "birds": [{"name": "", "description": ""}, {"name": "", "description": ""}, {"name": "", "description": ""}],
-  "plants": [{"name": "", "description": "", "season": ""}, {"name": "", "description": "", "season": ""}, {"name": "", "description": "", "season": ""}, {"name": "", "description": "", "season": ""}, {"name": "", "description": "", "season": ""}],
+  "birds": [{"name": "", "description": ""}],
+  "plants": [{"name": "", "description": "", "season": ""}],
   "moodTitle": "",
   "description": "",
   "imageQuery": ""
 }
+
+Return exactly 3 birds and 5 plants.
 `;
 
   const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
@@ -45,9 +47,16 @@ Return ONLY a JSON object with this structure (no markdown, no backticks):
   try {
     parsed = JSON.parse(cleaned);
   } catch {
-    console.error("Raw Groq text:", text);
-    throw new Error("Could not parse Groq JSON.");
-  }
+    console.error("Could not parse JSON, using fallback");
+    return {
+      birds: [],
+        plants: [],
+        moodTitle: "Nature awaits",
+        description: "Could not load nature data. Try again.",
+        imageQuery: "nature forest"
+    }
+    }
+  
 
   return parsed;
 };

@@ -1,6 +1,6 @@
 
 import { type Bird, type Plant } from "../models/types"
-import { getBirdImage, getPlantImage } from "../services/inaturalist";
+import { getNatureImages } from "../services/inaturalist";
 
 const wildlifeCards = document.getElementById("wildlifeCards");
 const plantCards = document.getElementById("plantCards")
@@ -11,7 +11,7 @@ export const wildlifeCardsFunction = async (birds: Bird[]) => {
         const description = document.createElement("p")
         const img = document.createElement("img")
         const card = document.createElement("div")
-        const imageUrl = await getBirdImage(bird.name) 
+        const imageUrl = await getNatureImages(bird.name) 
     img.src = imageUrl
     if (!imageUrl) {
       continue // hoppa över detta kort i loopen
@@ -44,7 +44,7 @@ export const plantCardsFunction = async (plants: Plant[]) => {
     const description = document.createElement("p")
     const img = document.createElement("img")
     const card = document.createElement("div")
-    const imageUrl = await getPlantImage(plant.name) 
+    const imageUrl = await getNatureImages(plant.name) 
     
     img.src = imageUrl
     if (imageUrl) img.src = imageUrl

@@ -18,10 +18,12 @@
           <nav id="nav" class="nav">
             <div class="logo">JUST NOW</div>
             <ul class="navList">
-              <li id="about"><a href="#">About</a></li>
-              <li id="birds"><a href="#">Birds</a></li>
-              <li id="plants"><a href="#">Plants</a></li>
-              <li id="currentMood"><a href="#">Current Mood</a></li>
+              <li id="about"><a href="#footerAbout">About</a></li>
+              <li id="birds"><a href="#wildlife">Birds</a></li>
+              <li id="plants"><a href="#plantSection">Plants</a></li>
+              <li id="currentMood">
+                <a href="#currentMoodSection">Current Mood</a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -35,7 +37,24 @@
 
           <div class="location-div" id="locationDiv">
             <span id="locationDisplay">
-              <span>📍</span>
+              <span id="">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                  />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </span>
               <span id="locationText"></span>
             </span>
             <input
@@ -89,7 +108,18 @@
           </div>
         </section>
       </main>
-      <footer><p>© 2026 Just Now. All rights reserved.</p></footer>
+      <footer>
+        <div>
+          <p class="footerAbout" id="footerAbout">
+            Just Now is a nature companion that tells you what's happening in
+            your local environment right now, birds, plants, and seasonal mood.
+            Powered by AI and real nature data.
+          </p>
+        </div>
+        <div>
+          <p>© 2026 Just Now. <br />All rights reserved.</p>
+        </div>
+      </footer>
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>

@@ -1,3 +1,5 @@
+
+/* ROOT & BASE */
 :root {
   line-height: 1.5;
   font-weight: 400;
@@ -11,16 +13,23 @@
   --color-rose: #efbeaf;
 }
 
+body {
+  font-family: 'Jost', sans-serif;
+  background-color: var(--color-cream);
+  color: var(--color-green);
+  margin: 0;
+}
 
 h1, h2, h3 {
   font-family: 'Cormorant Garamond', serif;
 }
+
 a {
   text-decoration: none;
-  color: var(--color-green)
-  
+  color: var(--color-green);
 }
-a:hover{
+
+a:hover {
   font-weight: 600;
 }
 
@@ -28,11 +37,18 @@ input {
   cursor: pointer;
 }
 
-body {
-  font-family: 'Jost', sans-serif;
-  background-color: var(--color-cream);
-  color: var(--color-green);
-  margin: 0;
+.hidden {
+  display: none;
+}
+
+
+/* HEADER & NAV */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-cream);
+  width: 100%;
 }
 
 .nav {
@@ -48,6 +64,8 @@ body {
   list-style: none;
 }
 
+
+/* HERO */
 .hero {
   height: 100vh;
   display: flex;
@@ -57,7 +75,7 @@ body {
   background: radial-gradient(ellipse 80% 40% at center, var(--color-rose), var(--color-cream));
 }
 
-.hero h1{
+.hero h1 {
   font-size: 6rem;
 }
 
@@ -67,83 +85,54 @@ body {
   cursor: pointer;
 }
 
-.hidden {
-  display: none;
+
+/* WILDLIFE & PLANTS */
+#wildlife, #plantSection {
+  padding: 4rem 2rem;
 }
 
-
-#wildlifeCards {
+#wildlifeCards, #plantCards {
   display: flex;
   gap: 2rem;
-  margin: 2rem;
-  
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
 }
 
-#wildlifeCards div {
+#wildlifeCards div, #plantCards div {
   max-width: 300px;
   overflow: hidden;
-  flex: 1;
-  
-  
+  flex-shrink: 0;
+  scroll-snap-align: start;
 }
 
-#wildlifeCards img {
+#wildlifeCards img, #plantCards img {
   width: 100%;
   aspect-ratio: 3/4;
   object-fit: cover;
   border-radius: 50px;
-
 }
 
-  .card {
-    opacity: 0;
-    transform: translateX(-40px);
-    transition: opacity 0.8s ease, transform 1s ease;
-  }
-
+.card {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 1s ease;
+}
 
 .card.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-#plantCards {
-  display: flex;
-  gap: 2rem;
-  margin: 2rem;
-  
-}
 
-#plantCards div {
-  max-width: 300px;
-  overflow: hidden;
-  flex: 1;
-  
-  
-}
-
-#plantCards img {
-  width: 100%;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  border-radius: 50px;
-
-}
-
-
-.photographer {
-  color: var(--color-cream);
-}
-
+/* CURRENT MOOD */
 #currentMoodSection {
   background: radial-gradient(ellipse 80% 40% at center, var(--color-green), var(--color-lightgreen));
   color: var(--color-cream);
   padding: 4rem;
   display: flex;
-  justify-content: center; /* centrerar kortet */
+  justify-content: center;
 }
 
-/* Gör kortet till "två kolumner" */
 .currentMoodCard {
   display: flex;
   flex-direction: row;
@@ -153,20 +142,22 @@ body {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
-
 }
 
-/* Textdelen */
 .mood-content {
   flex: 1;
-  min-width: 0; /* viktigt för att text ska kunna brytas snyggt */
+  min-width: 0;
 }
 
-/* Bilddelen */
+#moodDescription {
+  width: 60%;
+}
+
 .mood-image {
-  flex: 0 0 300px;  /* låser bredden */
+  flex: 0 0 300px;
   max-width: 300px;
   overflow: hidden;
+  text-align: center;
 }
 
 #moodImg {
@@ -177,27 +168,61 @@ body {
   display: block;
 }
 
+.photographer {
+  color: var(--color-cream);
+}
 
-/* Mobil: stapla */
+.mood-label{
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+}
+
+#moodTitle {
+  font-size: 2.5rem;
+}
+@media (max-width: 768px) {
+  .mood-image {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  #moodDescription {
+    width: 100%;
+  }
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: var(--color-cream);
+}
+
+.footerAbout {
+  max-width: 40%;
+}
+
+
+/* MEDIA QUERIES */
 @media (max-width: 768px) {
   .currentMoodCard {
     flex-direction: column;
     align-items: stretch;
   }
+
   .mood-image {
     flex: 0 0 auto;
     max-width: 100%;
   }
+
+  footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footerAbout {
+    max-width: 100%;
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
