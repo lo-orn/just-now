@@ -3,7 +3,7 @@
 export type Bird = {
     name: string,
     description: string,
-    imageUrl: string
+    imageUrl?: string
 }
 export type Plant = {
     name: string,

@@ -13,7 +13,7 @@ export const loadNatureData = async (city: string) => {
   const natureData = await fetchNatureInfo(city, date);
   wildlifeCardsFunction(natureData.birds);
   plantCardsFunction(natureData.plants);
-  const moodImage = await getMoodImage(natureData.imageQuery);
+  const moodImage = await getMoodImage(natureData.imageQuery ?? "nature forest sweden");
   renderCurrentMood(
     natureData.moodTitle,
     natureData.description,
