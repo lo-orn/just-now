@@ -5,6 +5,7 @@ import "./style.css";
 import { plantCardsFunction, wildlifeCardsFunction } from "./ui/cards";
 import { renderCurrentMood } from "./ui/currentMood";
 import { renderHero } from "./ui/hero";
+import { toggleHamburgerMenuFunction } from "./ui/hamburgerMenu";
 
 const city = await getCity();
 const date = new Date().toLocaleDateString("en-EN"); 
@@ -23,8 +24,12 @@ export const loadNatureData = async (city: string) => {
   
 }
 
+
 renderHero(city);
+toggleHamburgerMenuFunction();
 loadNatureData(city)
+
+
 
 
 
