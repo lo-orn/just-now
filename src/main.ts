@@ -19,7 +19,8 @@ export const loadNatureData = async (city: string) => {
     natureData.moodTitle,
     natureData.description,
     moodImage.url,
-    moodImage.photographer
+    moodImage.photographer,
+    moodImage.photographerLink
   );
   
 }

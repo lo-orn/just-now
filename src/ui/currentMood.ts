@@ -4,7 +4,7 @@ const moodDescription = document.getElementById("moodDescription") as HTMLParagr
 const moodImgEl = document.getElementById("moodImg") as HTMLImageElement
 const photographerEl = document.getElementById("photographer") as HTMLAnchorElement
 
-export const renderCurrentMood = (moodTitle: string, description: string, imageUrl: string, photographer: string) => {
+export const renderCurrentMood = (moodTitle: string, description: string, imageUrl: string, photographer: string, photographerLink: string) => {
 
 
 moodImgEl.classList.add("moodImg")
@@ -12,6 +12,8 @@ moodTitleEl.textContent = moodTitle;
 moodDescription.textContent = description
 moodImgEl.src = imageUrl
 moodImgEl.classList.add("moodImg")
+photographerEl.href = photographerLink
+photographerEl.target = "_blank"
 photographerEl.textContent = photographer + ` from Unsplash`
   
 }
