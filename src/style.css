@@ -41,6 +41,11 @@ input {
   display: none;
 }
 
+.logo {
+  white-space: nowrap;
+  letter-spacing: 4px;
+}
+
 
 /* HEADER & NAV */
 header {
