@@ -70,7 +70,7 @@ header {
 }
 
 #scrollDown {
-  user-select: none;
+  cursor: pointer;
 }
 
 
