@@ -69,6 +69,10 @@ header {
   list-style: none;
 }
 
+#scrollDown {
+  user-select: none;
+}
+
 
 /* HERO */
 .hero {
